@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Lera Forest
+Description=Mod from port of the original Fedora 9 boot splash for Plymouth
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/lera-forest
+ScriptFile=/usr/share/plymouth/themes/lera-forest/lera-forest.script

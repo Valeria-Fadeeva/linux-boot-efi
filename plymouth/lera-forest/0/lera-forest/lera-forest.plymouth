@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=lera-forest
+Description=A Plymouth theme.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/lera-forest
+ScriptFile=/usr/share/plymouth/themes/lera-forest/lera-forest.script

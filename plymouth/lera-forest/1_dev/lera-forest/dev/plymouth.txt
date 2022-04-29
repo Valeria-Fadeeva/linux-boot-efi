@@ -1,0 +1,28 @@
+# /sbin/plymouthd --no-daemon --debug --tty=/dev/tty
+
+# /bin/plymouth show-splash
+# /bin/plymouth quit
+
+# gdb attach $(/sbin/pidof plymouthd)
+
+# --mode=boot
+# --mode=shutdown
+# --mode=suspend
+# --mode=resume
+
+
+sudo plymouth show-splash;
+
+sudo plymouth message --text="hello world";
+sudo plymouth update --status="This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. ";
+sudo plymouth pause-progress;
+sudo plymouth message --text="pausing boot - press 'c' or space bar to continue";
+sudo plymouth watch-keystroke --keys="cC " --command="tee /tmp/c_key_pressed";
+sudo plymouth message --text="resuming boot";
+sudo plymouth unpause-progress;
+
+sudo plymouth ask-question --prompt "what is your name? " | tee /tmp/c_key_pressed --read-from-stdin;
+sudo plymouth ask-for-password --prompt "specify password: " | tee /tmp/c_key_pressed --read-from-stdin;
+sudo plymouth --update=fsck:sda1:27;
+
+sudo plymouth --quit;
