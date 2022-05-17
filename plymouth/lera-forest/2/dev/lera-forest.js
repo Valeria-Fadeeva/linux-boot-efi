@@ -209,7 +209,7 @@ function dialog_setup() {
     entry.sprite.SetPosition(entry.x, entry.y, entry.z);
 
     prompt_sprite = SpriteNew();
-    prompt_sprite.SetPosition(box.x + 26, box.y - 20, box.z);
+    prompt_sprite.SetPosition(box.x, box.y - 20, box.z);
 
     global.dialog.box = box;
     global.dialog.lock = lock;
@@ -244,7 +244,10 @@ function display_password_callback(prompt, bullets) {
     else
         dialog_opacity(1);
 
-    dialog.prompt_sprite.SetImage(Image.Text(prompt, 0.5, 0.5, 0.5));
+    dialog.image = Image.Text(prompt, 1, 1, 1);
+    dialog.prompt_sprite.SetImage(dialog.image);
+    dialog.prompt_sprite.SetPosition(Percent(50, screen.width) - dialog.image.GetWidth() / 2, Percent(85, screen.height) - 50 - 20, 10000);
+
     for(index = 0; dialog.bullet[index] || index < bullets; index++) {
         if (!dialog.bullet[index]) {
             dialog.bullet[index].sprite = Sprite(dialog.bullet_image);

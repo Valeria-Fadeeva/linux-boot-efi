@@ -2,4 +2,4 @@
 
 ./install.sh
 
-plymouthd --debug --no-daemon --tty=/dev/tty7
+sudo plymouthd --debug --no-daemon --tty=/dev/tty7
