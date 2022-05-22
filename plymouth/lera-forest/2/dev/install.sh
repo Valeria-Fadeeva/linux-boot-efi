@@ -29,7 +29,7 @@ elif hash plymouth-set-default-theme 2>/dev/null; then
     sudo plymouth-set-default-theme $THEME_NAME
 fi
 
-read -p 'Make initramfs. y/n? ' mifs
+read -p 'Make initramfs. y/N? ' mifs
 if [[ "${mifs,,}" == "y" ]]; then
 
     if hash plymouth-set-default-theme 2>/dev/null; then
@@ -42,8 +42,6 @@ if [[ "${mifs,,}" == "y" ]]; then
 
     sudo update-grub
     #sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-    sudo /boot/STUB/make-efi.sh
 else
     echo "Selected not to create initramfs"
 fi
