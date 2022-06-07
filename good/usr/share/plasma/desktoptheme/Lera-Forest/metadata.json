@@ -1,0 +1,22 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "valeria@fadeeva.me",
+                "Name": "Valeria Fadeeva",
+                "Name[x-test]": "xxVFaleria Fadeevaxx",
+            }
+        ],
+        "Category": "",
+        "Description": "Lera Forest",
+        "Description[x-test]": "xxLera Forestxx",
+        "EnabledByDefault": true,
+        "Id": "Lera-Forest",
+        "License": "AGPLv3",
+        "Name": "Lera Forest",
+        "Name[x-test]": "xxLera Forestxx",
+        "Version": "5.94.0",
+        "Website": "https://github.com/Valeria-Fadeeva"
+    },
+    "X-Plasma-API": "5.0"
+}

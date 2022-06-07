@@ -1,0 +1,28 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "pankajsunal123@gmail.com",
+                "Name": "Prateek SU"
+            }
+        ],
+        "Category": "Application Launchers",
+        "Dependencies": [
+        ],
+        "Description": "A configurable launcher menu 11",
+        "EnabledByDefault": true,
+        "Icon": "start-here-kde",
+        "Id": "com.github.adhec.Menu11",
+        "License": "GPL-2.0+",
+        "Name": "Menu11",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "8.0"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.launchermenu"
+    ]
+}

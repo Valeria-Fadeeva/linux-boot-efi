@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="icon" type="String">
+      <label>The name of the icon to use for the compact representation (e.g. on a small panel).</label>
+      <default>start-here-kde</default>
+    </entry>
+    <entry name="useCustomButtonImage" type="Bool">
+      <label>Whether to use a custom image instead of an icon in the compact representation (e.g. on a small panel).</label>
+      <default>false</default>
+    </entry>
+    <entry name="customButtonImage" type="Url">
+      <label>The URL of the custtom image to use instead of an icon in the compact representation (e.g. on a small panel).</label>
+      <default></default>
+    </entry>
+
+    <entry name="appNameFormat" type="Int">
+      <label>The format used in the display of application names: 0 = NameOnly, 1 = GenericNameOnly, 2 = NameAndGenericName, 3 = GenericNameAndName</label>
+      <default>0</default>
+    </entry>
+
+    <entry name="recentOrdering" type="Int">
+      <label>How should the previously used apps/docs/contacts be ordered: 0 = RecentFirst, 1 = PopularFirst</label>
+      <default>0</default>
+    </entry>
+    <entry name="favoriteApps" type="StringList">
+      <label>List of general favorites. Supported values are menu id's (usually .desktop file names), special URLs that expand into default applications (e.g. preferred://browser), document URLs and KPeople contact URIs.</label>
+      <default>preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop,org.kde.discover</default>
+    </entry>
+    <entry name="favoriteSystemActions" type="StringList">
+      <label>List of system action favorites.</label>
+      <default>logout,reboot,shutdown</default>
+    </entry>
+    <entry name="favoritesPortedToKAstats" type="Bool">
+      <label>Are the favorites ported to use KActivitiesStats to allow per-activity favorites</label>
+      <default>false</default>
+    </entry>
+    <entry name="hiddenApplications" type="StringList">
+      <label>List of menu id's (usually .desktop file names) of apps that should not be shown in the menu.</label>
+      <default></default>
+    </entry>
+        
+    <entry name="showRecentApps" type="Bool">
+      <label>Whether to show the "Recent Applications" category.</label>
+      <default>true</default>
+    </entry>
+    <entry name="showRecentDocs" type="Bool">
+      <label>Whether to show the "Recent Documents" category.</label>
+      <default>true</default>
+    </entry>
+    <entry name="gridAllowTwoLines" type="Bool">
+      <label>Whether to allow showing two lines in grid view.</label>
+      <default>true</default>
+    </entry>
+    <entry name="showRecentContacts" type="Bool">
+      <label>Whether to show the "Recent Contacts" category.</label>
+      <default>false</default>
+    </entry>
+    <entry name="replaceExplorerIcon" type="Bool">
+      <default>false</default>
+    </entry>
+        
+    <entry name="useExtraRunners" type="Bool">
+      <label>Whether to use additional KRunner plugins to produce results in the search.</label>
+      <default>true</default>
+    </entry>
+    <entry name="extraRunners" type="StringList">
+      <label>The plugin id's of additional KRunner plugins to use. Only used if useExtraRunners is true.</label>
+      <default>shell,bookmarks,baloosearch,locations</default>
+    </entry>
+    <entry name="menuPosition" type="Int">
+      <label>The position of the menu: 0 = Center, 1 = Edge, 2 = Auto</label>
+      <default>0</default>
+    </entry>
+    <entry name="favGridModel" type="Int">
+      <label>The model for favorite grid / pinned apps grid: 0 = Favourite apps, 1 = Recent apps, 2 = Recent Documents</label>
+      <default>0</default>
+    </entry>
+    <entry name="numberColumns" type="Int">
+      <default>6</default>
+    </entry>
+    <entry name="numberRows" type="Int">
+      <default>3</default>
+    </entry>
+    <entry name="recentGridModel" type="Int">
+      <label>The model for recent item grid / recommended grid: 0 = Recent Documents, 1 = Recent apps, 2 = Favourite apps, 3 = None</label>
+      <default>0</default>
+    </entry>
+    <entry name="showDescription" type="Bool">
+      <label>Whether to show the description for app and search items or not.</label>
+      <default>false</default>
+    </entry>
+    <entry name="alwaysShowSearchBar" type="Bool">
+      <label>Whether to always show the search bar on top of the menu or not.</label>
+      <default>true</default>
+    </entry>
+    <entry name="preferFullName" type="Bool">
+      <label>Whether to prefer showing the user's full name in the menu, instead of the login name.</label>
+      <default>true</default>
+    </entry>
+    <entry name="downIconsDocuments" type="Bool">
+      <label>Shows or hides the Documents shortcut on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsPictures" type="Bool">
+      <label>Shows or hides the Pictures shortcut on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsMusic" type="Bool">
+      <label>Shows or hides the Music shortcut on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsDownloads" type="Bool">
+      <label>Shows or hides the Downloads shortcut on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsVideos" type="Bool">
+      <label>Shows or hides the Videos shortcut on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsFileManager" type="Bool">
+      <label>Shows or hides the File Manager (aka Dolphin) shortcut on the bottom bar.</label>
+      <default>true</default>
+    </entry>
+    <entry name="downIconsSystemSettings" type="Bool">
+      <label>Shows or hides the System Settings shortcut on the bottom bar.</label>
+      <default>true</default>
+    </entry>
+    <entry name="downIconsLock" type="Bool">
+      <label>Shows or hides the Lock button on the bottom bar.</label>
+      <default>false</default>
+    </entry>
+    <entry name="downIconsPowerOptions" type="Bool">
+      <label>Shows or hides the Power Options button on the bottom bar.</label>
+      <default>true</default>
+    </entry>
+    <entry name="defaultAllApps" type="Bool">
+      <label>Whether to show All Apps screen by default or not.</label>
+      <default>false</default>
+    </entry>
+    <entry name="reducePinnedSize" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="reduceIconSizeFooter" type="Bool">
+      <label>Whether to reduce icon size for footer to match consistency.</label>
+      <default>false</default>
+    </entry>
+    <entry name="reduceIconSizeUserProfile" type="Bool">
+      <default>true</default>
+    </entry>
+  </group>
+</kcfg>

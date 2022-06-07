@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Fluent-round
+Comment=An Materia Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Fluent-round
+MetacityTheme=Fluent-round
+IconTheme=Fluent
+CursorTheme=Fluent
+ButtonLayout=close,minimize,maximize:menu
