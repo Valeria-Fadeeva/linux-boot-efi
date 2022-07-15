@@ -3,7 +3,7 @@
    id="svg4379"
    width="200"
    height="200"
-   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    sodipodi:docname="kde.svg"
    version="1.1"
    viewBox="0 0 200 200"
@@ -113,11 +113,11 @@
      gridtolerance="10"
      guidetolerance="10"
      inkscape:current-layer="svg4379"
-     inkscape:cx="108.49974"
-     inkscape:cy="121.06659"
+     inkscape:cx="108.67674"
+     inkscape:cy="121.24359"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-height="997"
+     inkscape:window-height="998"
      inkscape:window-maximized="1"
      inkscape:window-width="1920"
      inkscape:window-x="0"
@@ -130,30 +130,11 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:document-rotation="0"
-     inkscape:pagecheckerboard="0">
+     inkscape:pagecheckerboard="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#dfe2e4">
     <inkscape:grid
        id="grid839"
        type="xygrid" />
   </sodipodi:namedview>
-  <g
-     id="g1873"
-     transform="matrix(12.598517,0,0,12.598517,-51.666657,-76.624994)"
-     style="fill:#ffffff;fill-opacity:1">
-    <path
-       id="path1865"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.286629;stroke-linejoin:round"
-       d="m 12.170744,6.4789367 v 0.5291628 2.3812326 0.5291628 h 0.529163 2.381232 0.529163 V 9.3893321 7.0080995 c 0,-0.2931562 -0.236007,-0.5291628 -0.529163,-0.5291628 h -2.381232 z" />
-    <path
-       id="path1867"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.286629;stroke-linejoin:round"
-       d="m 8.9957671,6.4789367 c -0.2931562,0 -0.5291628,0.2360066 -0.5291628,0.5291628 v 2.3801991 0.00103 0.5281293 h 0.5074589 c 0.00725,2.921e-4 0.014375,0.00103 0.021704,0.00103 H 11.377 11.906163 V 9.3893321 7.0080995 6.4789367 H 11.377 Z" />
-    <path
-       id="path1869"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.286629;stroke-linejoin:round"
-       d="m 12.170744,10.183076 v 0.529163 2.381233 0.529163 h 0.529163 2.381232 c 0.293156,0 0.529163,-0.236007 0.529163,-0.529163 v -2.381233 -0.529163 h -0.529163 -2.381232 z" />
-    <path
-       id="path1871"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.286629;stroke-linejoin:round"
-       d="m 8.4666043,10.183076 v 0.529163 2.381233 c 0,0.293156 0.2360066,0.529163 0.5291628,0.529163 H 11.377 11.906163 V 13.093472 10.712239 10.183076 H 11.377 8.9957671 Z" />
-  </g>
 </svg>
