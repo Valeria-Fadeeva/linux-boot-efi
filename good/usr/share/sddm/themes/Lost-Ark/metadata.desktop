@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=Lera Police
+Description=Lera Police theme for KDE Plasma
+Author=Valeria Fadeeva
+License=AGPLv3
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/Valeria-Fadeeva
+Screenshot=Preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=valeria@fadeeva.me
+Theme-Id=Lera-Police
+Theme-API=2.0

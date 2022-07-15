@@ -4,7 +4,7 @@
             {
                 "Email": "valeria@fadeeva.me",
                 "Name": "Valeria Fadeeva",
-                "Name[x-test]": "xxVFaleria Fadeevaxx",
+                "Name[x-test]": "xxVFaleria Fadeevaxx"
             }
         ],
         "Category": "",
@@ -15,7 +15,7 @@
         "License": "AGPLv3",
         "Name": "Lera Forest",
         "Name[x-test]": "xxLera Forestxx",
-        "Version": "5.94.0",
+        "Version": "5.96.0",
         "Website": "https://github.com/Valeria-Fadeeva"
     },
     "X-Plasma-API": "5.0"
