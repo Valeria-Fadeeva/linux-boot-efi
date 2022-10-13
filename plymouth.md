@@ -5,6 +5,5 @@ Copyright (c) Valeria Fadeeva - https://github.com/Valeria-Fadeeva/linux-boot-ef
 Changed background, scripts
 
 
-![image](plymouth_screenshots/Screenshot_20220510_042207.png)
-![image](plymouth_screenshots/Screenshot_20220510_042220.png)
-![image](plymouth_screenshots/Screenshot_20220510_042334.png)
+![image](plymouth_screenshots/Screenshot_2022-10-13_09-33.png)
+\* black on left and right of screen only on VM

@@ -32,10 +32,8 @@ selection_small themes/lera-forest/color-icons/selection-small.png
 font themes/lera-forest/fonts/source-code-pro-extralight-14.png
 ```
 
-![image](refind_screenshots/screenshot_006.jpg)
-![image](refind_screenshots/screenshot_007.jpg)
-![image](refind_screenshots/screenshot_008.jpg)
-![image](refind_screenshots/screenshot_009.jpg)
-![image](refind_screenshots/screenshot_010.jpg)
-![image](refind_screenshots/screenshot_011.jpg)
-![image](refind_screenshots/screenshot_012.jpg)
+![image](refind_screenshots/screenshot_001.jpg)
+![image](refind_screenshots/screenshot_002.jpg)
+![image](refind_screenshots/screenshot_003.jpg)
+![image](refind_screenshots/screenshot_004.jpg)
+
