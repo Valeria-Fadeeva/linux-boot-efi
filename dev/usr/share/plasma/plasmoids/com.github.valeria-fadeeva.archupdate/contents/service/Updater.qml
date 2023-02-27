@@ -11,7 +11,13 @@ Item {
   }
 
   function upgrade() {
-    cmd.exec(Plasmoid.configuration.commandForUpgrade)
+    if (root.total == 0 || isNaN(root.total)){
+      root.createNotification("Обновлений нет")
+      return
+    }
+    else {
+      cmd.exec(Plasmoid.configuration.commandForUpgrade)
+    }
   }
 
   // execute function count each 30 minutes

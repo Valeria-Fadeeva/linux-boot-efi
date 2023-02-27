@@ -12,19 +12,29 @@ Item {
   Layout.fillWidth: true
   Layout.fillHeight: true
 
-  ColumnLayout {
-    anchors.fill: parent
+  ScrollView {
+    id: view
+    width: parent.width
+    height: (parent.width < parent.height ? parent.width : parent.height) * 0.9
 
-    Layout.fillWidth: true
+    TextArea {
+      width: parent.width
+      height: (parent.width < parent.height ? parent.width : parent.height) * 0.9
+      text: root.listOfPackages
+    }
+  }
+
+  Item {
     Layout.fillHeight: true
+    Layout.fillWidth: true
+  }
 
-    ScrollView {
-      id: view
-      anchors.fill: parent
+  RowLayout {
+    id: buttonRow
 
-      TextArea {
-          text: root.listOfPackages
-      }
+    anchors {
+      bottom: parent.bottom
+      horizontalCenter: parent.horizontalCenter
     }
 
     Button {
@@ -37,4 +47,5 @@ Item {
         onClicked: updater.upgrade()
     }
   }
+
 }
