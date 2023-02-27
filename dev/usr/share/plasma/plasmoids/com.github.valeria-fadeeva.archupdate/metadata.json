@@ -1,0 +1,39 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "valeria@fadeeva.me",
+                "Name": "Valeria Fadeeva",
+                "Name[ru]": "Валерия Фадеева",
+                "Name[x-test]": "xxVFaleria Fadeevaxx"
+            }
+        ],
+
+        "Category": "System Information",
+        "Name": "Arch Linux Update",
+        "Name[ru]": "Обновления Arch Linux",
+        "Name[en_GB]": "Arch Linux Update",
+        "Description": "Count and show the pending pacman update",
+        "Description[ru]": "Считает и показывает количество пакетов, ожидающих обновления",
+        "Description[en_GB]": "Count and show the pending pacman update",
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "desktop"
+        ],
+        "Icon": "preferences-desktop",
+        "Id": "com.github.valeria-fadeeva.archupdate",
+        "License": "AGPLv3",
+
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+
+        "Version": "1.0",
+        "Website": "https://github.com/Valeria-Fadeeva"
+    },
+
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-NotificationArea": "true",
+    "X-Plasma-NotificationAreaCategory": "Software"
+}
