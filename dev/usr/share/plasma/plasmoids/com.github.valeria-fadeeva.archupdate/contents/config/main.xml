@@ -18,7 +18,7 @@
       <default>checkupdates</default>
     </entry>
     <entry name="commandForUpgrade" type="string">
-      <default>konsole -e "paru -Syu"</default>
+      <default>konsole --separate -e "sudo pacman -Syu"</default>
     </entry>
   </group>
 </kcfg>
