@@ -8,5 +8,4 @@ else
     echo "USER IS ROOT"
 fi
 
-cd good
-cp --recursive --force --remove-destination --no-dereference --preserve=links . /
+cp -vrf --remove-destination --no-dereference --preserve=links good/* /
