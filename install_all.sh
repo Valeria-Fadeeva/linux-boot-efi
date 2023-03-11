@@ -8,4 +8,6 @@ else
     echo "USER IS ROOT"
 fi
 
-cp -vrf --remove-destination --no-dereference --preserve=links good/* /
+pwd=$(dirname $0)
+
+cp -vrf --remove-destination --no-dereference --preserve=links $pwd/good/* /
