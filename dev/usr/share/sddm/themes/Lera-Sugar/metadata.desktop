@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Lera Sugar
+Description=Fork from Premium Sugar for SDDM by Marian Arlt
+Author=Valeria Fadeeva
+Copyright=Copyright (C) 2023 Valeria Fadeeva
+License=AGPLv3
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/Valeria-Fadeeva
+Screenshot=Preview.jpg
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=valeria@fadeeva.me
+Theme-Id=Lera-Sugar
+Theme-API=2.11

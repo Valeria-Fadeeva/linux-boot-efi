@@ -1,0 +1,152 @@
+# Translation of OnzeMenu in fr
+# Copyright (C) 2022
+# This file is distributed under the same license as the OnzeMenu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OnzeMenu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-02 23:21-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.desktop
+msgid "OnzeMenu 11"
+msgstr "OnzeMenu 11"
+
+#: ../metadata.desktop
+msgid "A configurable launcher menu 11"
+msgstr "Un lanceur configurable style Win11"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "Général"
+
+#: ../contents/ui/code/tools.js
+msgid "Remove from Favorites"
+msgstr "Retirer des Favoris"
+
+#: ../contents/ui/code/tools.js
+msgid "Add to Favorites"
+msgstr "Ajouter aux Favoris"
+
+#: ../contents/ui/code/tools.js
+msgid "On All Activities"
+msgstr "Pour toute les sessions"
+
+#: ../contents/ui/code/tools.js
+msgid "On the Current Activity"
+msgstr "Pour la session en cours"
+
+#: ../contents/ui/code/tools.js
+msgid "Show in Favorites"
+msgstr "Montrer dans les favoris"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Icon:"
+msgstr "Icône:"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose..."
+msgstr "Choisissez..."
+
+#: ../contents/ui/ConfigGeneral.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr "Effacer l'icône"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Menu position"
+msgstr "Position du menu"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Default"
+msgstr "Par défaut"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Center"
+msgstr "Centré"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Center bottom"
+msgstr "Centré en bas"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Expand search to bookmarks, files and emails"
+msgstr "Étendre la recherche dans les marques-pages, les fichiers et les emails"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Show labels in two lines"
+msgstr "Montrer les étiquettes sur 2 lignes"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Number of columns (main grid)"
+msgstr "Nombre de colonnes (grille principale)"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Number of rows (main grid)"
+msgstr "Nombre de lignes (grille principale)"
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Icons smooth"
+msgstr ""
+
+#: ../contents/ui/ConfigGeneral.qml
+msgid "Size of icons"
+msgstr "Taille des icônes"
+
+#: ../contents/ui/Footer.qml
+msgid "User Home"
+msgstr "Dossier utilisateur (Home)"
+
+#: ../contents/ui/Footer.qml
+msgid "System Preferences"
+msgstr "Préférences système"
+
+#: ../contents/ui/Footer.qml
+msgid "Lock Screen"
+msgstr "Verrouiller l'écran"
+
+#: ../contents/ui/Footer.qml
+msgid "Leave ..."
+msgstr "Quitter ..."
+
+#: ../contents/ui/main.qml
+msgid "Edit Applications…"
+msgstr "Éditer les applications"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "Type here to search ..."
+msgstr "Rechercher ..."
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "Search results"
+msgstr "Résultats de la recherche"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "Pinned"
+msgstr "Applications épinglées"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "All apps"
+msgstr "Toutes les applications"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "Recommended"
+msgstr "Applications recommandées"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "Back"
+msgstr "Retour"
+
+#: ../contents/ui/MenuRepresentation.qml
+msgid "More"
+msgstr "Plus"
