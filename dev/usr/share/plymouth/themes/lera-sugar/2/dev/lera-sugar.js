@@ -3,9 +3,29 @@ Theme Name: lera-forest
 Version: 1.0
 Description: My theme
 Author: Valeria Fadeeva - https://github.com/Valeria-Fadeeva
-Date: 2022.05.04
+Date: 2023.04.04
 License: GNU AFFERO GENERAL PUBLIC LICENSE, see <http://www.gnu.org/licenses/>
 */
+
+Window.GetMaxWidth = function() {
+  i = 0;
+  width = 0;
+  while (Window.GetWidth(i)){
+    width = Math.Max(width, Window.GetWidth(i));
+    i++;
+    }
+  return width;
+};
+
+Window.GetMaxHeight = function() {
+  i = 0;
+  height = 0;
+  while (Window.GetHeight(i)){
+    height = Math.Max(height, Window.GetHeight(i));
+    i++;
+    }
+  return height;
+};
 
 Percent = function(perc, pixels) {
     result = Math.Int(Math.Abs(Math.Int(pixels)) / 100 * Math.Abs(Math.Int(perc)));
@@ -101,19 +121,21 @@ z0 = Window.GetZ();
 Window.SetBackgroundTopColor(0, 0, 0);
 Window.SetBackgroundBottomColor(0, 0, 0);
 
-screen.width = Window.GetWidth();
-screen.height = Window.GetHeight();
+screen.width = Window.GetMaxWidth();
+screen.height = Window.GetMaxHeight();
 
 // BACKGROUND
 background.image = Image("BACKGROUND.png");
 background.image = ScaleImage(background.image, Limit(screen.width, screen.height, 100));
-//background.image = ScaleImage(background.image, Window);
 
 background.width = background.image.GetWidth();
 background.height = background.image.GetHeight();
 
-background.x = x0 + screen.width / 2 - background.width / 2;
-background.y = y0 + screen.height / 2 - background.height / 2;
+// background.x = x0 + screen.width / 2 - background.width / 2;
+// background.y = y0 + screen.height / 2 - background.height / 2;
+
+background.x = x0;
+background.y = y0;
 
 background.sprite = SpriteNew();
 background.sprite.SetImage(background.image);
