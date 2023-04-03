@@ -85,6 +85,15 @@ SetSpriteImage = function(asset, x, y, z) {
     return sprite;
 };
 
+
+// TEXT
+ubuntufont = "Ubuntu Mono Regular 16";
+perfont = "Ubuntu Mono Regular 16";
+progressfont = "Ubuntu Mono Regular 16";
+starting_text = "Starting up...";
+bye_text = "System is shutting down";
+progress_t= 0;
+
 x0 = Window.GetX();
 y0 = Window.GetY();
 z0 = Window.GetZ();
@@ -113,11 +122,10 @@ background.sprite.SetOpacity(1);
 
 // MESSAGE BACKGROUND
 message_background.image = Image("MESSAGE_BACKGROUND.png");
-message_background.image_size = Limit(Percent(20, screen.width), Percent(30, screen.height), 100);
-message_background.image = ScaleImage(message_background.image, message_background.image_size);
+message_background.image = message_background.image.Scale(Percent(25, screen.width), Percent(100, screen.height));
 
-message_background.x = Percent(1, screen.width);
-message_background.y = Percent(55, screen.height);
+message_background.x = x0;
+message_background.y = y0;
 
 message_background.sprite = Sprite(message_background.image);
 message_background.sprite.SetPosition(message_background.x, message_background.y, 8);
@@ -125,7 +133,7 @@ message_background.sprite.SetOpacity(0.45);
 
 // **************************************** //
 
-per.image = Image.Text("Lera forest v8: x0: " + x0 + "; y0: " + y0, 0.5, 0.5, 0.5, 1, perfont);
+per.image = Image.Text("Lera Sugar v10", 0.5, 0.5, 0.5, 1, perfont);
 per.sprite = Sprite(per.image);
 per.x = x0 + screen.width  / 1 - per.image.GetWidth() / 0.91;
 per.y = y0 + screen.height / 1.01  - per.image.GetHeight() / 1;
@@ -146,61 +154,85 @@ logo.sprite.SetOpacity(1);
 
 // PROGRESS BACKGROUND
 progress_background.image = Image("PROGRESS_BACKGROUND.png");
-progress_background.image_size = Limit(Percent(15, screen.width), Percent(5, screen.height), 100);
-progress_background.image = ScaleImage(progress_background.image, progress_background.image_size);
+progress_background.image = progress_background.image.Scale(Percent(15, screen.width), Percent(10, screen.height));
 
-progress_background.x = Percent(50, screen.width) - progress_background.image.GetWidth() / 2;
-progress_background.y = Percent(99, screen.height) - progress_background.image.GetHeight();
+progress_background.width = progress_background.image.GetWidth();
+progress_background.height = progress_background.image.GetHeight();
+
+progress_background.x = Percent(50, screen.width) - progress_background.width / 2;
+progress_background.y = Percent(99, screen.height) - progress_background.height;
 
 progress_background.sprite = Sprite(progress_background.image);
 progress_background.sprite.SetPosition(progress_background.x, progress_background.y, 2);
 progress_background.sprite.SetOpacity(0.45);
 
+
 // PROGRESS BOX
 progress_box.image = Image("PROGRESS_BOX.png");
-progress_box.sprite = Sprite(progress_box.image);
+progress_box.image = progress_box.image.Scale(Percent(90, progress_background.width), Percent(15, progress_background.height));
 
-progress_box.x = Percent(50, screen.width) - progress_box.image.GetWidth() / 2;
-progress_box.y = Percent(95, screen.height) - progress_box.image.GetHeight() / 2;
+progress_box.width = progress_box.image.GetWidth();
+progress_box.height = progress_box.image.GetHeight();
+
+progress_box.x = Percent(50, screen.width) - progress_box.width / 2;
+progress_box.y = Percent(95, screen.height) - progress_box.height / 2;
+
+progress_box.sprite = Sprite(progress_box.image);
 progress_box.sprite.SetPosition(progress_box.x, progress_box.y, 5);
 
 // PROGRESS BAR
 progress_bar.original_image = Image("PROGRESS_BAR.png");
-progress_bar.sprite = Sprite();
+progress_bar.original_image = progress_bar.original_image.Scale(Percent(90, progress_background.width), Percent(15, progress_background.height));
+
+progress_bar.width = progress_bar.original_image.GetWidth();
+progress_bar.height = progress_bar.original_image.GetHeight();
 
 progress_bar.x = Percent(50, screen.width) - progress_bar.original_image.GetWidth() / 2;
 progress_bar.y = Percent(95, screen.height) - progress_bar.original_image.GetHeight() / 2;
+
+progress_bar.sprite = Sprite();
 progress_bar.sprite.SetPosition(progress_bar.x, progress_bar.y, 6);
 
 // PROGRESS FADE
 progress_fade.image = Image("PROGRESS_FADE.png");
+progress_fade.image = progress_fade.image.Scale(Percent(10, progress_background.width), Percent(15, progress_background.height));
+
+progress_fade.width = progress_fade.image.GetWidth();
+progress_fade.height = progress_fade.image.GetHeight();
+
 progress_fade.sprite = Sprite(progress_fade.image);
+
 fade_dir = 0; // 0 = right, 1 = left
 counter = 0;
+max_counter = progress_box.width - progress_fade.width;
 
 // PROGRESS TEXT
 progress_text.image = Image.Text(progress_t + "%", 255, 255, 255, 1, progressfont);
-progress_text.sprite = Sprite();
 
-progress_text.x = progress_box.x + progress_box.image.GetWidth() - progress_text.image.GetWidth(); // позиция % по X
-progress_text.y = progress_box.y - progress_text.image.GetHeight() * 2; // позиция % по Y
+progress_text.width = progress_text.image.GetWidth();
+progress_text.height = progress_text.image.GetHeight();
+
+progress_text.x = progress_box.x + progress_box.width - progress_text.width * 2; // позиция % по X
+progress_text.y = progress_box.y - progress_text.height * 2; // позиция % по Y
+
+progress_text.sprite = SpriteNew();
 progress_text.sprite.SetPosition(progress_text.x, progress_text.y, 6);
 
 // SPINNER
 spinner.image = Image("SPINNER.png");
-spinner.image = ScaleImage(spinner.image, Limit(screen.width, screen.width, 1));
+spinner.image = spinner.image.Scale(Percent(1, screen.width), Percent(1, screen.width));
+
+spinner.width = spinner.image.GetWidth();
+spinner.height = spinner.image.GetHeight();
+
+spinner.x = progress_background.x + progress_background.width - spinner.width;
+spinner.y = progress_background.y + spinner.height / 10;
+
 spinner.sprite = Sprite(spinner.image);
-spinner.x = progress_text.x + progress_text.image.GetWidth() / 2 + spinner.image.GetWidth();
-spinner.y = progress_text.y;
 spinner.sprite.SetPosition(spinner.x, spinner.y, 11); // позиция за или перед
 
 
 function progress_callback(duration, progress) {
-    /*if (progress_bar.image.GetWidth() != Math.Int(249 * progress)) {
-        progress_bar.image = progress_bar.original_image.Scale(249 * progress, progress_bar.original_image.GetHeight());
-        progress_bar.sprite.SetImage(progress_bar.image);
-    }*/
-
     if (progress_bar.image.GetWidth() != Math.Int(progress_bar.original_image.GetWidth() * progress)) {
         progress_bar.image = progress_bar.original_image.Scale(progress_bar.original_image.GetWidth(progress_bar.original_image) * progress, progress_bar.original_image.GetHeight());
         progress_bar.sprite.SetImage(progress_bar.image);
@@ -223,49 +255,73 @@ function dialog_setup() {
     local.entry;
     local.prompt_sprite;
 
-    box_background.image = Image("BOX.png");
-    box_background.image_size = Limit(Percent(15, screen.width), Percent(5, screen.height), 100);
-    box_background.image = ScaleImage(box_background.image, box_background.image_size);
 
-    box_background.x = Percent(50, screen.width) - box_background.image.GetWidth() / 2;
-    box_background.y = Percent(85, screen.height) - box_background.image.GetHeight();
+    box_background.image = Image("BOX.png");
+    box_background.image = box_background.image.Scale(Percent(15, screen.width), Percent(10, screen.height));
+
+    box_background.width = box_background.image.GetWidth();
+    box_background.height = box_background.image.GetHeight();
+
+    box_background.x = Percent(50, screen.width) - box_background.width / 2;
+    box_background.y = progress_background.y - box_background.height - Percent(1, screen.height);
     box_background.z = 10000;
 
     box_background.sprite = Sprite(box_background.image);
-    box_background.sprite.SetOpacity(0.45);
     box_background.sprite.SetPosition(box_background.x, box_background.y, box_background.z);
+    box_background.sprite.SetOpacity(0.45);
 
-    lock.image = Image("LOCK.png");
+
     entry.image = Image("ENTRY.png");
+    entry.image = entry.image.Scale(Percent(90, box_background.width), Percent(33, box_background.height));
+    entry.width = entry.image.GetWidth();
+    entry.height = entry.image.GetHeight();
 
-    lock.sprite = Sprite(lock.image);
-    lock.x = box_background.x + box_background.image.GetWidth()/2 + entry.image.GetWidth()/2 - lock.image.GetWidth()*1.5;
-    lock.y = box_background.y + box_background.image.GetHeight()/2 - lock.image.GetHeight()/2;
-    lock.z = box_background.z + 2;
-    lock.sprite.SetPosition(lock.x, lock.y, lock.z);
+    entry.x = box_background.x + box_background.width/2 - entry.width/2;
+    entry.y = box_background.y + box_background.height/2 - entry.height/2;
+    entry.z = box_background.z + 1;
 
     entry.sprite = Sprite(entry.image);
-    entry.x = box_background.x + box_background.image.GetWidth()/2 - entry.image.GetWidth()/2;
-    entry.y = box_background.y + box_background.image.GetHeight()/2 - entry.image.GetHeight()/2;
-    entry.z = box_background.z + 1;
     entry.sprite.SetPosition(entry.x, entry.y, entry.z);
 
+
+    lock.image = Image("LOCK.png");
+    lock.image = lock.image.Scale(Percent(95, entry.height), Percent(95, entry.height));
+    lock.width = lock.image.GetWidth();
+    lock.height = lock.image.GetHeight();
+
+    lock.x = entry.x + entry.width - lock.width - (entry.height - lock.height);
+    lock.y = entry.y + entry.height/2 - lock.height/2;
+    lock.z = box_background.z + 2;
+
+    lock.sprite = Sprite(lock.image);
+    lock.sprite.SetPosition(lock.x, lock.y, lock.z);
+
+
     prompt_sprite = SpriteNew();
-    prompt_sprite.SetPosition(entry.x, box_background.y + entry.image.GetHeight()/2, box_background.z + 1);
+    prompt_sprite.SetPosition(entry.x, box_background.y + entry.height/2, box_background.z + 1);
+
 
     global.dialog.box_background = box_background;
     global.dialog.lock = lock;
     global.dialog.entry = entry;
     global.dialog.bullet_image = Image("BULLET.png");
     global.dialog.prompt_sprite = prompt_sprite;
-    dialog_opacity(0.45);
+    dialog_opacity(1);
 }
 
 function dialog_opacity(opacity) {
-    dialog.box_background.sprite.SetOpacity(opacity);
-    dialog.lock.sprite.SetOpacity(opacity);
-    dialog.entry.sprite.SetOpacity(opacity);
+    if (opacity == 0) {
+        dialog.box_background.sprite.SetOpacity(opacity);
+        dialog.lock.sprite.SetOpacity(opacity);
+        dialog.entry.sprite.SetOpacity(opacity);
+    }
+    else {
+        dialog.lock.sprite.SetOpacity(opacity);
+        dialog.entry.sprite.SetOpacity(opacity);
+    }
+
     dialog.prompt_sprite.SetOpacity(opacity);
+
     for(index = 0; dialog.bullet[index]; index++) {
         dialog.bullet[index].sprite.SetOpacity(opacity);
     }
@@ -284,7 +340,7 @@ function display_password_callback(prompt, bullets) {
     if (!global.dialog)
         dialog_setup();
     else
-        dialog_opacity(0.45);
+        dialog_opacity(1);
 
     dialog.image = Image.Text(prompt, 1.0, 1.0, 1.0, 1, ubuntufont);
     dialog.prompt_sprite.SetImage(dialog.image);
@@ -313,27 +369,6 @@ Plymouth.SetDisplayNormalFunction(display_normal_callback);
 Plymouth.SetDisplayPasswordFunction(display_password_callback);
 Plymouth.SetMessageFunction(display_message_callback);
 
-// TEXT
-maximum_msg = 5;
-ubuntufont = "Ubuntu Mono Regular 14";
-perfont = "Ubuntu Regular 16";
-progressfont = "Ubuntu Mono Regular 14";
-starting_text = "Starting up...";
-bye_text = "System is shutting down";
-progress_t= 0;
-fun_curve_linear = 0;
-fun_curve_in = 1;
-fun_curve_out = 2;
-fun_curve_in_out = 3;
-radiant_factor = Math.Pi / 180;
-math_pi2 = Math.Pi / 2;
-dots = 5;
-show_progress = 0;
-fade_out_dots = 1;
-fps = 13;
-//anim_duration = 1600;
-//anim_frames = anim_duration / 1000 * fps;
-
 /* this function only goes up to 100
 because thats all thats needed for
 the progress meter bar */
@@ -353,18 +388,19 @@ function atoi(str) {
 time = 1;
 
 function refreshHandler() {
-    if (status == "normal" &&  Plymouth.GetMode() == "boot") {
+    if (global.status == "normal" &&  Plymouth.GetMode() == "boot") {
         progress_fade.sprite.SetOpacity (0); // полностью прозрачный
         progress_bar.sprite.SetOpacity (1);
-        text.image = Image.Text(starting_text, 1.0, 1.0, 1.0, 1, ubuntufont);
+        text.image = Image.Text(starting_text, 0.5, 0.5, 0.5, 1, ubuntufont);
         text.sprite = Sprite(text.image);
         text.x = progress_box.x;
         text.y = progress_box.y - progress_text.image.GetHeight() * 2;
         text.sprite.SetPosition(text.x, text.y, 2);
-    } else {
+    }
+    else {
         progress_fade.sprite.SetOpacity (1);
         progress_bar.sprite.SetOpacity (0);
-        text_end.image = Image.Text(bye_text, 1.0, 1.0, 1.0, 1, ubuntufont);
+        text_end.image = Image.Text(bye_text, 0.5, 0.5, 0.5, 1, ubuntufont);
         text_end.sprite = Sprite(text_end.image);
         text_end.x = progress_box.x;
         text_end.y = progress_box.y - progress_text.image.GetHeight() * 2;
@@ -377,7 +413,7 @@ function refreshHandler() {
 
     if (fade_dir == 0) {
         counter++;
-        if (counter >= 218) {
+        if (counter >= max_counter) {
             fade_dir = 1;
         }
     }
@@ -391,10 +427,11 @@ function refreshHandler() {
     /* if fsck is running or the password is prompted, hide the spinner */
     if (fsck_running == 1 || passw_dialog_input_sprite.GetOpacity() == 1) {
         spinner.sprite.SetOpacity(0);
-    } else {
+    }
+    else {
         spinner.sprite.SetOpacity(1);
         time++;
-        theta = time / 100;
+        theta = time / 50;
         spinner.sprite.SetImage(spinner.image.Rotate(theta));
     }
 
@@ -404,7 +441,8 @@ function refreshHandler() {
 
         if (fsck_fade_in_counter < 1) {
             fsck_fade_in_counter+= 0.025;
-        } else {
+        }
+        else {
             fsck_done_fading = 1;
         }
     }
@@ -413,13 +451,13 @@ function refreshHandler() {
 Plymouth.SetRefreshFunction(refreshHandler);
 
 // LOG //
-NUM_SCROLL_LINES=14; //количество строк лога
+NUM_SCROLL_LINES=25; //количество строк лога
 LINE_WIDTH=35; //ширина строк лога
 
 message_sprite=SpriteNew();
 
 function message_callback(prompt) {
-    message = Image.Text(prompt, 1.0, 1.0, 1.0, 1, ubuntufont);
+    message = Image.Text(prompt, 0.5, 0.5, 0.5, 1, ubuntufont);
     message_sprite.SetImage(message);
     message_sprite.SetPosition(Percent(2, screen.width), Percent(95, screen.height), 9);
     message_sprite.SetOpacity(1);
@@ -430,9 +468,9 @@ Plymouth.SetMessageFunction(message_callback);
 // Initialising text images and their positions
 // 20 is the height(including line spacing) of each line
 for(i=0; i < NUM_SCROLL_LINES; i++) {
-    lines[i]= Image.Text("", 1.0, 1.0, 1.0, 1, ubuntufont); //цвет строк
+    lines[i]= Image.Text("", 0.5, 0.5, 0.5, 1, ubuntufont); //цвет строк
     message_sprite[i] = SpriteNew();
-    message_sprite[i].SetPosition(Percent(2, screen.width), Percent(60, screen.height) + (i * 17), 9);
+    message_sprite[i].SetPosition(Percent(2, screen.width), Percent(5, screen.height) + (i * 17), 9);
 }                                    //высота строк           //отступ строк
 
 function StringLength(string) {
@@ -455,7 +493,7 @@ function scroll_message_callback(text) {
     }
 
     //  Create the image for the latest message
-    lines[i] = Image.Text(text, 1.0, 1.0, 1.0, 1, ubuntufont);
+    lines[i] = Image.Text(text, 0.5, 0.5, 0.5, 1, ubuntufont);
 
     //  Re-positioning the text images
     for(i = 0; i < NUM_SCROLL_LINES; i++) {
