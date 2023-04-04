@@ -131,11 +131,11 @@ background.image = ScaleImage(background.image, Limit(screen.width, screen.heigh
 background.width = background.image.GetWidth();
 background.height = background.image.GetHeight();
 
-// background.x = x0 + screen.width / 2 - background.width / 2;
-// background.y = y0 + screen.height / 2 - background.height / 2;
+background.x = x0 + screen.width / 2 - background.width / 2;
+background.y = y0 + screen.height / 2 - background.height / 2;
 
-background.x = x0;
-background.y = y0;
+//background.x = x0;
+//background.y = y0;
 
 background.sprite = SpriteNew();
 background.sprite.SetImage(background.image);
@@ -176,7 +176,7 @@ logo.sprite.SetOpacity(1);
 
 // PROGRESS BACKGROUND
 progress_background.image = Image("PROGRESS_BACKGROUND.png");
-progress_background.image = progress_background.image.Scale(Percent(15, screen.width), Percent(10, screen.height));
+progress_background.image = progress_background.image.Scale(Percent(20, screen.width), Percent(10, screen.height));
 
 progress_background.width = progress_background.image.GetWidth();
 progress_background.height = progress_background.image.GetHeight();
@@ -279,7 +279,7 @@ function dialog_setup() {
 
 
     box_background.image = Image("BOX.png");
-    box_background.image = box_background.image.Scale(Percent(15, screen.width), Percent(10, screen.height));
+    box_background.image = box_background.image.Scale(Percent(20, screen.width), Percent(10, screen.height));
 
     box_background.width = box_background.image.GetWidth();
     box_background.height = box_background.image.GetHeight();
@@ -453,7 +453,7 @@ function refreshHandler() {
     else {
         spinner.sprite.SetOpacity(1);
         time++;
-        theta = time / 50;
+        theta = time / (Math.Pi * 2);
         spinner.sprite.SetImage(spinner.image.Rotate(theta));
     }
 
