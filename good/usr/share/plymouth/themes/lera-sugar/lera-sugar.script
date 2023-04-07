@@ -155,7 +155,7 @@ message_background.sprite.SetOpacity(0.45);
 
 // **************************************** //
 
-per.image = Image.Text("Lera Sugar v10", 0.5, 0.5, 0.5, 1, perfont);
+per.image = Image.Text("https://Valeria.Fadeeva.me", 0.5, 0.5, 0.5, 1, perfont);
 per.sprite = Sprite(per.image);
 per.x = x0 + screen.width  / 1 - per.image.GetWidth() / 0.91;
 per.y = y0 + screen.height / 1.01  - per.image.GetHeight() / 1;
