@@ -155,7 +155,7 @@ message_background.sprite.SetOpacity(0.45);
 
 // **************************************** //
 
-per.image = Image.Text("https://Valeria.Fadeeva.me", 0.5, 0.5, 0.5, 1, perfont);
+per.image = Image.Text("Valeria.Fadeeva.me", 0.5, 0.5, 0.5, 1, perfont);
 per.sprite = Sprite(per.image);
 per.x = x0 + screen.width  / 1 - per.image.GetWidth() / 0.91;
 per.y = y0 + screen.height / 1.01  - per.image.GetHeight() / 1;
@@ -188,6 +188,31 @@ progress_background.sprite = Sprite(progress_background.image);
 progress_background.sprite.SetPosition(progress_background.x, progress_background.y, 2);
 progress_background.sprite.SetOpacity(0.45);
 
+// SPINNER
+spinner.image = Image("SPINNER.png");
+spinner.image = spinner.image.Scale(Percent(1, screen.width), Percent(1, screen.width));
+
+spinner.width = spinner.image.GetWidth();
+spinner.height = spinner.image.GetHeight();
+
+spinner.x = progress_background.x + progress_background.width - spinner.width;
+spinner.y = progress_background.y + spinner.height / 10;
+
+spinner.sprite = Sprite(spinner.image);
+spinner.sprite.SetPosition(spinner.x, spinner.y, 11); // позиция за или перед
+
+
+// PROGRESS TEXT
+progress_text.image = Image.Text(progress_t + "%", 255, 255, 255, 1, progressfont);
+
+progress_text.width = progress_text.image.GetWidth();
+progress_text.height = progress_text.image.GetHeight();
+
+progress_text.x = progress_background.x + progress_background.width - (2.5 * spinner.width); // позиция % по X
+progress_text.y = progress_background.y + (1.5 * spinner.height); // позиция % по Y
+
+progress_text.sprite = SpriteNew();
+progress_text.sprite.SetPosition(progress_text.x, progress_text.y, 6);
 
 // PROGRESS BOX
 progress_box.image = Image("PROGRESS_BOX.png");
@@ -227,31 +252,6 @@ progress_fade.sprite = Sprite(progress_fade.image);
 fade_dir = 0; // 0 = right, 1 = left
 counter = 0;
 max_counter = progress_box.width - progress_fade.width;
-
-// PROGRESS TEXT
-progress_text.image = Image.Text(progress_t + "%", 255, 255, 255, 1, progressfont);
-
-progress_text.width = progress_text.image.GetWidth();
-progress_text.height = progress_text.image.GetHeight();
-
-progress_text.x = progress_box.x + progress_box.width - progress_text.width * 2; // позиция % по X
-progress_text.y = progress_box.y - progress_text.height * 2; // позиция % по Y
-
-progress_text.sprite = SpriteNew();
-progress_text.sprite.SetPosition(progress_text.x, progress_text.y, 6);
-
-// SPINNER
-spinner.image = Image("SPINNER.png");
-spinner.image = spinner.image.Scale(Percent(1, screen.width), Percent(1, screen.width));
-
-spinner.width = spinner.image.GetWidth();
-spinner.height = spinner.image.GetHeight();
-
-spinner.x = progress_background.x + progress_background.width - spinner.width;
-spinner.y = progress_background.y + spinner.height / 10;
-
-spinner.sprite = Sprite(spinner.image);
-spinner.sprite.SetPosition(spinner.x, spinner.y, 11); // позиция за или перед
 
 
 fun progress_callback(duration, progress) {
