@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=Lera Forest
-Description=My mod from "FEDORA-CORE-9-BOOT-SPLASH-PORT (DUKE93 22.12.2021)"
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/lera-forest
-ScriptFile=/usr/share/plymouth/themes/lera-forest/lera-forest.script

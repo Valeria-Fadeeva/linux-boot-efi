@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=Lera Sugar
-Description=Based from COGWHEEL-A-SPINNER-LOG-PGR-1-BLACK_v1.0_PLYMOUTH-THEME https://www.gnome-look.org/p/1466107
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/lera-sugar
-ScriptFile=/usr/share/plymouth/themes/lera-sugar/lera-sugar.script
